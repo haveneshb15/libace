@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <head>
+    <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script>
+		        function turnon(){
+				$.ajax({
+					url: "writeLED/On",
+		        		success: function(result){
+						
+		        			} 
+					})
+		        }
+
+		        function turnoff(){
+				$.ajax({
+					url: "writeLED/Off",
+		        		success: function(result){
+						
+		        			} 
+					})
+		        }
+
+			function buzzeron(){
+				$.ajax({
+					url: "writeBuzz/On",
+					success: function(result){
+						
+						}
+					})
+			}
+
+			function buzzeroff(){
+				$.ajax({
+					url: "writeBuzz/Off",
+					success: function(result){
+						
+						}
+					})
+			}
+
+			function lcdon(){
+				$.ajax({
+					url: "writeLcd/On",
+					success: function(result){
+						
+						}
+					})
+			}
+
+			function lcdoff(){
+				$.ajax({
+					url: "writeLcd/Off",
+					success: function(result){
+						
+						}
+					})
+			}
+
+		        $(document).ready(function(){ 
+				$("#b1").click(function(){
+		        		turnon(); 
+				});
+
+		                $("#b2").click(function(){
+		        	        turnoff(); 
+				});
+				
+				$("#buzz1").click(function(){
+					buzzeron();	
+				});
+
+				$("#buzz2").click(function(){
+					buzzeroff();
+				});
+
+				$("#lcd1").click(function(){
+					lcdon();	
+				});
+
+				$("#lcd2").click(function(){
+					lcdoff();
+				});
+		        });
+        	</script> 
+    </head>
+    <body>
+        <div class="navbar navbar-default" style="background-color: purple;">
+            <div class="container">
+                <a href="#" class="navbar-brand"><img src='https://imgur.com/nHKr1Yi.png' width='15%' alt='Libace Logo'/></a>
+            </div>
+        </div>
+        <div class="container">
+	  <div class="row">
+	     <div class="col-lg-8 well">
+		  <h1> LED Testing </h1>
+		  <button class="btn btn-success" id="b1">Turn on</button>
+                  <button class="btn btn-danger" id="b2">Turn off</button>
+                  <h2 id="status"></h2>
+	     </div>
+	     </div>
+	  <div class="row">
+	     <div class="col-lg-8 well">
+		  <h1> Buzzer Testing </h1>
+		  <button class="btn btn-success" id="buzz1">Turn on</button>
+                  <button class="btn btn-danger" id="buzz2">Turn off</button>
+                  <h2 id="buzzstatus"></h2>
+	     </div>
+	     
+	  </div>
+	 <div class="row">
+	     <div class="col-lg-8 well">
+		  <h1> LCD Screen Testing </h1>
+		  <button class="btn btn-success" id="lcd1">Turn on</button>
+                  <button class="btn btn-danger" id="lcd2">Turn off</button>
+                  <h2 id="lcdstatus"></h2>
+	     </div>
+	  </div>
+	</div>
+    </body> 
+
+</html>
